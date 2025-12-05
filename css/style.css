@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    color: #0a3d62;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content wrapper to control footer position */
+main {
+    flex: 1 0 auto; /* fills remaining space, but not excessive */
+}
+
+/* Add top padding so fixed navbar and sections spacing don't cover headings */
+body > *:not(header):not(footer) {
+    padding-top: 140px; /* consistent spacing */
+}
+
+/* Header / Navbar */
+header {
+    width: 100%;
+    background: #0a3d62;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #82ccdd;
+}
+
+.nav-links a.active {
+    color: #82ccdd;
+    font-weight: bold;
+}
+
+/* Hero / Animated Sections */
+.hero, .about, .skills, .projects, .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInUp 1s ease forwards;
+    margin: 40px auto 20px auto;
+    max-width: 1200px;
+    width: 90%;
+    scroll-margin-top: 140px;
+}
+
+/* Hero animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0a3d62;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1e6bb8;
+}
+
+/* Profile Image Floating & Morphing Animation */
+.profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    animation: float 3s ease-in-out infinite;
+    transition: border-radius 0.6s ease, transform 0.3s;
+}
+
+.profile-img:hover {
+    border-radius: 50% 50% 40% 60% / 60% 40% 50% 50%;
+    transform: translateY(-5px);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* Sections Styling */
+.about, .skills, .projects, .contact {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f9fafd;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.about:hover, .skills:hover, .projects:hover, .contact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Skills List */
+.skill-list li, .skill {
+    list-style: none;
+    margin: 10px 5px;
+    padding: 12px 18px;
+    display: inline-block;
+    background: #dff9fb;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-list li:hover, .skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Contact links */
+.contact-links a {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    width: 250px;
+    background: #0a3d62;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-links a:hover {
+    background: #1e6bb8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Project cards */
+.project {
+    margin: 20px 0;
+    padding: 20px;
+    background: #dff9fb;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Footer - pushed further down */
+footer {
+    text-align: center;
+    padding: 1px 8px;
+    background: #0a3d62;
+    color: white;
+    font-size: 14px;
+    margin-top: 180px;      /* much larger to push footer lower */
+    box-shadow: 0 -1px 6px rgba(0,0,0,0.15);
+    line-height: 1.2;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
